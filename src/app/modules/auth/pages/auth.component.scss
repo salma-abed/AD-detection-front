@@ -1,0 +1,24 @@
+.auth-container{
+  height: 100vh;
+  .media{
+    transition: all .8s .1s ease-in-out;
+    background-image: url("/assets/images/login-2.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgb(15 44 73 / 47%);
+    }
+  }
+  .content{
+    max-width: 60%;
+  }
+}

@@ -1,0 +1,52 @@
+.about-us{
+  .content{
+    h1{
+      font-size: 4rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+    p{
+      color: #7f7f7f;
+    }
+  }
+  .bg-container{
+    position: relative;
+    min-height: 34rem;
+    height: 100%;
+    width: 100%;
+    .bg{
+      height: 100%;
+      width: 100%;
+      transition: all .8s .1s ease-in-out;
+      background-image: url("/assets/images/about-us-section.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &:hover{
+        transition: all .8s .1s ease-in-out;
+        transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -webkit-transition: all .8s .1s ease-in-out;
+        -moz-transition: all .8s .1s ease-in-out;
+        -ms-transition: all .8s .1s ease-in-out;
+        -o-transition: all .8s .1s ease-in-out;
+}
+    }
+    .frame{
+      &::before{
+        content: "";
+        position: absolute;
+        bottom: -2rem;
+        right: -2rem;
+        height: 100%;
+        width: 100%;
+        background-color: #0f2c49;
+        z-index: -1;
+      }
+    }
+  }
+}

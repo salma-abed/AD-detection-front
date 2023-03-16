@@ -1,0 +1,27 @@
+<h2 mat-dialog-title class="d-flex justify-content-between">
+  <div class="text-center w-100">
+    <div class="delete-title-icon">
+      <span class="material-symbols-outlined"> delete </span>
+    </div>
+  </div>
+  <span mat-button mat-dialog-close class="material-symbols-outlined closeModal">
+    <mat-icon>close</mat-icon>
+  </span>
+</h2>
+<mat-dialog-content>
+  <h5>{{message}}</h5>
+</mat-dialog-content>
+<mat-dialog-actions class="mb-1" align="center">
+  <div class="row w-75">
+    <div class="col-6">
+      <button mat-button class="btn btn-outline-danger w-100" [mat-dialog-close]="false">
+        Decline
+      </button>
+    </div>
+    <div class="col-6">
+      <button mat-button class="btn btn-danger w-100" [mat-dialog-close]="true" cdkFocusInitial>
+        Confirm
+      </button>
+    </div>
+  </div>
+</mat-dialog-actions>

@@ -1,0 +1,19 @@
+<div class="auth-container">
+  <mat-card>
+    <mat-card-content>
+      <form #loginForm="ngForm">
+        <h2>Conatact US</h2>
+        <mat-form-field>
+          <input matInput placeholder="Email" name="Email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Phone" name="Phone" required>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea cols="6" rows="3" matInput placeholder="Message..."></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [routerLink]="['../']">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

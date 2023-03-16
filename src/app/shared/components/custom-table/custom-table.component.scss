@@ -1,0 +1,75 @@
+.list-group li a {
+  cursor: pointer;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.mat-row.example-detail-row {
+  min-height: 0;
+}
+
+.mat-row.example-element-row:not(.example-expanded-row):hover,
+.example-expanded-row {
+  color: #fff;
+  cursor: pointer;
+}
+
+.mat-row.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+  cursor: pointer;
+
+}
+
+.example-element-row .mat-cell {
+  border-bottom-width: 0;
+}
+
+mat-table:not(#collapse-table) {
+  .mat-row:nth-child(odd){
+    background-color: #EFF0F0;
+  }
+}
+
+
+#collapse-table {
+  .mat-row:nth-child(4n-1),
+  .mat-row:nth-child(4n) {
+    background-color: #EFF0F0;
+  }
+}
+
+
+
+.mat-header-cell {
+  white-space: nowrap;
+  width: 20%;
+  white-space: nowrap;
+  font-size: 0.96rem !important;
+ }
+
+.mat-header-row {
+  background: #f6f7fb;
+  border-bottom: 1px solid #efeff1;
+}
+
+mat-row {
+  border-color: #e4e4e4;
+}
+
+.mat-cell {
+  width: 20%;
+  font-size: 0.9rem;
+  color: var(--black);
+  line-height: 1.5rem;
+}
+
+.disc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 155px;
+  display: block;
+}
+

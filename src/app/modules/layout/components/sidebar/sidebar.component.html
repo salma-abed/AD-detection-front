@@ -1,0 +1,8 @@
+<mat-list>
+  <mat-list-item [routerLink]="[item?.link]" routerLinkActive="active" *ngFor="let item of items">
+    <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+    <div matListItemTitle>{{item.name}}</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+
+</mat-list>

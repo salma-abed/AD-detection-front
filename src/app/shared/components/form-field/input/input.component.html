@@ -1,0 +1,8 @@
+ <mat-form-field class="{{className}}" appearance="fill" [floatLabel]="floatLabel">
+   <mat-label> {{label}} </mat-label>
+   <input [formControl]="controller" matInput [min]="min" [placeholder]="placeholder"
+     [maxlength]="maxLength" [type]="type" (change)="inputChanged($event)" [readonly]="isReadOnly">
+   <mat-error>
+     <app-error-messages [control]="controller" [labelName]="label"></app-error-messages>
+   </mat-error>
+ </mat-form-field>

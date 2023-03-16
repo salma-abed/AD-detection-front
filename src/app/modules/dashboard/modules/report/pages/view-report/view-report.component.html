@@ -1,0 +1,25 @@
+<section class="container report-container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image avatar">
+        <img class="rounded" [src]="reportInfo?.patient?.image?.src || './assets/images/default-user.jpg'" alt="">
+      </div>
+      <mat-card-title>{{reportInfo?.patient?.name}}</mat-card-title>
+      <mat-card-subtitle>Email: {{reportInfo?.patient?.email}}</mat-card-subtitle>
+      <mat-card-subtitle>Phone: {{reportInfo?.patient?.phone}}</mat-card-subtitle>
+      <mat-card-subtitle>Gender: {{reportInfo?.patient?.gender}}</mat-card-subtitle>
+      <mat-card-subtitle>Age: {{reportInfo?.patient?.age}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-6">
+          <img [src]="reportInfo?.file?.src" height="100%" width="100%" alt="">
+        </div>
+      </div>
+    </mat-card-content>
+    <!-- <mat-card-actions class="d-flex align-items-center justify-content-between">
+      <button class="btn btn-success" mat-button>Approve</button>
+      <button class="btn btn-danger" mat-button>Reject</button>
+    </mat-card-actions> -->
+  </mat-card>
+</section>

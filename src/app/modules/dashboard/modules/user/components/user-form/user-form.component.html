@@ -1,0 +1,50 @@
+
+<form class="container mt-5" [formGroup]="formGroup" (ngSubmit)="submitForm()">
+  <mat-card>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-6">
+          <app-input [controller]="getControl('name')" label="Name" [floatLabel]="'auto'" [maxLength]="50"
+            className="w-100">
+          </app-input>
+        </div>
+        <div class="col-6">
+          <app-input [controller]="getControl('email')" label="Email" [floatLabel]="'auto'" [maxLength]="50"
+            className="w-100">
+          </app-input>
+        </div>
+        <div class="col-6">
+          <app-input [controller]="getControl('phone')" label="Phone Number" [floatLabel]="'auto'" [maxLength]="50"
+            className="w-100">
+          </app-input>
+        </div>
+        <div class="col-6">
+          <app-input [controller]="getControl('age')" label="age" [floatLabel]="'auto'" [maxLength]="50"
+            className="w-100">
+          </app-input>
+        </div>
+        <div class="col-6">
+          <app-input [controller]="getControl('password')" label="Password" [floatLabel]="'auto'" [maxLength]="50"
+            className="w-100">
+          </app-input>
+        </div>
+        <div class="col-6">
+          <app-select [controller]="getControl('role')" optionValue="value" optionLabel="title" label="Roles"
+              [placeholder]="'Roles'" [floatLabel]="'auto'" className="w-100"
+              [data]="roles"
+              className="custom-form-field w-100" appearance="fill"></app-select>
+        </div>
+        <div class="col-6">
+          <app-select [controller]="getControl('gender')" optionValue="value" optionLabel="title" label="Genders"
+              [placeholder]="'Genders'" [floatLabel]="'auto'" className="w-100"
+              [data]="genders"
+              className="custom-form-field w-100" appearance="fill"></app-select>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="d-flex align-items-center justify-content-between mx-2">
+      <button type="button" class="btn btn-defualt" mat-raised-button color="primary" routerLink="../">Cancel</button>
+      <button [disabled]="formGroup.invalid || loading" type="submit" class="btn btn-primary" mat-raised-button color="primary">{{data?._id ? "Save Changes" : "Submit"}}</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -1,0 +1,21 @@
+<section class="container-fluid mt-5">
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="col-3 search">
+      <input [formControl]="searchInput" type="text" class="form-control" id="Search" placeholder="Search"/>
+      <span class="search-btn"><span class="stcIcon-search-o"></span></span>
+    </div>
+
+    <button class="btn btn-primary d-flex align-items-center" routerLink="../create">
+      <mat-icon>add</mat-icon>
+      Add
+    </button>
+  </div>
+  <app-custom-table
+    (paginationEmitter)="onPageChanged($event)"
+    [dataSource]="dataSource"
+    [loading]="loading"
+    [showToolTip]="true"
+    (actionsEmitter)="onRowAction($event)"
+  ></app-custom-table>
+</section>
+

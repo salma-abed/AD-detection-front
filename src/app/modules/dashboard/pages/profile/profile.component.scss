@@ -1,0 +1,13 @@
+.profile {
+  display: flex;
+  justify-content: space-around;
+}
+.file-input {
+  display: none;
+}
+.rounded {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50% !important;
+}

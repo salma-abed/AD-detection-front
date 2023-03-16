@@ -1,0 +1,41 @@
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-6">
+      <app-input [controller]="getControl('name')" label="Name" [floatLabel]="'auto'" [maxLength]="50"
+        className="w-100">
+      </app-input>
+    </div>
+    <div class="col-6">
+      <app-input [controller]="getControl('email')" label="Email" [floatLabel]="'auto'" [maxLength]="50"
+        className="w-100">
+      </app-input>
+    </div>
+    <div class="col-6">
+      <app-input [controller]="getControl('phoneNumber')" label="Phone Number" [floatLabel]="'auto'" [maxLength]="50"
+        className="w-100">
+      </app-input>
+    </div>
+    <div class="col-6">
+      <app-input [controller]="getControl('age')" label="age" [floatLabel]="'auto'" [maxLength]="50"
+        className="w-100">
+      </app-input>
+    </div>
+    <div class="col-6">
+      <app-input [controller]="getControl('password')" label="Password" [floatLabel]="'auto'" [maxLength]="50"
+        className="w-100">
+      </app-input>
+    </div>
+    <div class="col-6">
+      <app-select [controller]="getControl('role')" optionValue="value" optionLabel="title" label="Roles"
+          [placeholder]="'Roles'" [floatLabel]="'auto'" className="w-100"
+          [data]="roles"
+          className="custom-form-field w-100" appearance="fill"></app-select>
+    </div>
+    <div class="col-6">
+      <app-select [controller]="getControl('gender')" optionValue="value" optionLabel="title" label="Genders"
+          [placeholder]="'Genders'" [floatLabel]="'auto'" className="w-100"
+          [data]="genders"
+          className="custom-form-field w-100" appearance="fill"></app-select>
+    </div>
+  </div>
+  </section>

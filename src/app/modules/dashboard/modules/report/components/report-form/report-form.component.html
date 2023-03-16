@@ -1,0 +1,29 @@
+<form class="container mt-5" [formGroup]="formGroup" (ngSubmit)="submitForm()">
+  <mat-card>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-12">
+          <div class="col">
+            <div>
+              <div class="text-center" (click)="fileUpload.click()">
+                <img [src]="imageSrc || data?.file?.src ||'./assets/images/default-user.jpg'" class="rounded" alt="user Profile">
+              </div>
+              <input type="file" class="file-input" (change)="onFileSelected($event)" accept="image/*" #fileUpload>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <app-select [controller]="getControl('patient')" optionValue="_id" optionLabel="name" label="Patient"
+              [placeholder]="'Patient'" [floatLabel]="'auto'" className="w-100"
+              [data]="patients?.data"
+              className="custom-form-field w-100" appearance="fill"></app-select>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="d-flex align-items-center justify-content-between mx-2">
+      <button type="button" class="btn btn-defualt" mat-raised-button color="primary" routerLink="../../list">Cancel</button>
+      <button [disabled]="formGroup.invalid || loading" type="submit" class="btn btn-primary" mat-raised-button color="primary">{{data?._id ? "Save Changes" : "Submit"}}</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
+

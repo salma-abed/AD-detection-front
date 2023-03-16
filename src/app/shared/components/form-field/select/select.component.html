@@ -1,0 +1,30 @@
+<mat-form-field class="primary-form gray-input" [ngClass]="className" [appearance]="appearance"
+  [floatLabel]="floatLabel">
+  <label class="mat-form-content">
+    <mat-select panelClass="custom-select" [formControl]="controller" [multiple]="multiple" [placeholder]="placeholder"
+      (selectionChange)="emitSelectedValue($event)" disableOptionCentering>
+      <div class="custom-input-search" *ngIf="searchable">
+        <mat-icon matSuffix (click)="clearSearch()">{{
+          searchCtrl.value.length > 0 ? "close" : "search"
+        }}</mat-icon>
+        <input class="custom-select-search" [placeholder]="searchOptions?.label ? searchOptions?.label : 'Search'"
+          [formControl]="searchCtrl" matInput (keydown)="$event.stopPropagation()" />
+      </div>
+      <mat-option [matTooltip]="item?.extraData?.tooltip" [value]="optionValue ? item[optionValue] : item"
+        *ngFor="let item of data">
+        {{ optionLabel ? item[optionLabel] : item }}
+      </mat-option>
+      <mat-option class="text-center remove-checked" *ngIf="!data?.length" disabled>
+        {{
+          searchOptions?.noEntriesFound
+            ? searchOptions?.noEntriesFound
+            : "No Data"
+        }}
+      </mat-option>
+    </mat-select>
+  </label>
+  <mat-icon matSuffix *ngIf="displayClearBtn" (click)="emitClear($event)">close</mat-icon>
+  <mat-error>
+    <app-error-messages [control]="controller" [labelName]="label"></app-error-messages>
+  </mat-error>
+</mat-form-field>

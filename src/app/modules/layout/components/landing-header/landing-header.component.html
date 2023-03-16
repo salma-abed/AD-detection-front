@@ -1,0 +1,45 @@
+<mat-toolbar class="navbar" color="primary">
+  <mat-toolbar-row class="d-flex align-items-center justify-content-between">
+    <div class="text-center logo" routerLink="/landing/home">
+      <img src="./assets/images/logo.png" class="rounded" alt="user Profile">
+    </div>
+    <div>
+      <a mat-button routerLinkActive="active" routerLink="/landing/home"> Home </a>
+      <a mat-button routerLinkActive="active" routerLink="/landing/about"> About Us </a>
+      <a mat-button routerLinkActive="active" routerLink="/landing/services"> Services </a>
+      <a mat-button routerLinkActive="active" routerLink="/landing/contact"> Contact Us </a>
+      <a mat-button routerLinkActive="active" routerLink="/landing/faqs"> FAQs </a>
+    </div>
+    <div>
+      <ng-container *ngIf="userInfo?._id; else loginButton">
+        <button mat-button [matMenuTriggerFor]="userMenu">
+          <mat-icon>person</mat-icon>
+          <span fxShow fxHide.xs>
+            {{userInfo?.name}}
+          </span>
+        </button>
+        <mat-menu #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+          <a mat-menu-item [routerLink]="['/dashboard']">
+            <mat-icon>dashboard</mat-icon>
+            <span>Dashboard</span>
+          </a>
+
+          <a mat-menu-item [routerLink]="['/dashboard/profile']">
+            <mat-icon>person</mat-icon>
+            <span>Profile</span>
+          </a>
+
+          <a mat-menu-item href="javascript:void(0)" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Log out</span>
+          </a>
+        </mat-menu>
+      </ng-container>
+      <ng-template #loginButton>
+        <a mat-button routerLinkActive="active" routerLink="/auth/login"> Login</a>
+      </ng-template>
+
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>

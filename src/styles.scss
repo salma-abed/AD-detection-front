@@ -1,0 +1,107 @@
+h1,p
+{
+  font-family: "Bahnschrift"!important;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mat-typography {
+  h1 {
+    margin: 0;
+  }
+}
+
+.spinner {
+  left: 49%;
+  position: fixed !important;
+  top: 15%;
+  z-index: 9999;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-start {
+  text-align: start !important;
+}
+
+.text-end {
+  text-align: end !important;
+}
+
+.mat-list-item,
+.mat-menu-item {
+  font-size: 14px !important;
+}
+
+// header
+.navbar-spacer {
+  flex: 1 1 auto;
+}
+
+.navbar {
+  z-index: 2;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-is-mobile .navbar {
+  position: fixed;
+  z-index: 2;
+}
+
+// auth login
+.auth-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+  mat-card {
+    width: 500px;
+    text-align: center;
+  }
+
+  mat-form-field {
+    display: block;
+  }
+
+  .additional-link {
+    margin: 10px auto;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(42, 125, 219);
+    cursor: pointer;
+  }
+}
+
+
+.cursor-pointer{
+  cursor: pointer;
+}

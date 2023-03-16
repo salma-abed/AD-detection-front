@@ -1,0 +1,11 @@
+<div class="navbar-container">
+  <app-navbar (toggleMenu)="snav.toggle()"></app-navbar>
+  <mat-sidenav-container class="navbar-sidenav-container">
+    <mat-sidenav #snav [opened]="true" [mode]="'side'" [fixedInViewport]="true" fixedTopGap="64" class="sidenav">
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
