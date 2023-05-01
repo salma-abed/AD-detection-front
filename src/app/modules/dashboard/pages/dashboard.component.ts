@@ -26,12 +26,6 @@ export class DashboardComponent implements OnInit{
 
   dashboardItem = [
     {
-      title: 'Users',
-      icon: 'people',
-      total: '0',
-      route:'user'
-    },
-    {
       title: 'Doctor',
       icon: 'work',
       total: '0',
@@ -42,6 +36,12 @@ export class DashboardComponent implements OnInit{
       icon: 'accessible',
       total: '0',
       route:'patient'
+    },
+    {
+      title: 'Reports under classification',
+      icon: 'assignment_ind',
+      total: '5',
+      route:'user'
     },
     {
       title: 'Reports',
@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit{
   getPatients(){
     this._userService?.getList({role:"6102ef52c543fa4f5c1d5aa4"})?.subscribe({
       next: (res:any) => {
-        this.dashboardItem[2].total = res?.totalCount;
+        this.dashboardItem[1].total = res?.totalCount;
       }
     })
   }

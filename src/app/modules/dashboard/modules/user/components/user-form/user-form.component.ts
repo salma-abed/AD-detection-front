@@ -90,7 +90,7 @@ export class UserFormComponent implements OnInit, OnDestroy, OnChanges {
       password:['',(!this.data?.password ? [Validators.required, passwordValidator] : null)],
       gender:[this.data?.gender || '',[Validators.required]],
       role:[this.data?.role || '',[Validators.required]],
-      doctor:[this.data?.doctor?._id || '',[Validators.required]],
+      doctor:[this.data?.doctor?._id || ''],
     })
   }
 

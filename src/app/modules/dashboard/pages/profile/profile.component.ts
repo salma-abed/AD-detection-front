@@ -16,6 +16,7 @@ import { ToastrService } from 'ngx-toastr';
 import { InputComponent } from 'src/app/shared/components/form-field/input/input.component';
 import { SelectComponent } from 'src/app/shared/components/form-field/select/select.component';
 import { UtilityService } from 'src/app/core/services/utility.service';
+import { passwordValidator } from 'src/app/core/validations/confirm-password.validation';
 @Component({
   selector: 'app-profile',
   standalone: true,
@@ -77,7 +78,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
       name:[this.userInfo?.name || '',[Validators.required]],
       age:[this.userInfo?.age || '',[Validators.required]],
       image:[''],
-      password:['',(!this.userInfo?.password ? Validators.required : null)],
+      password:[null,(!this.userInfo?.password ? [Validators.required, passwordValidator] : [passwordValidator])],
       gender:[this.userInfo?.gender || '',[Validators.required]],
       role:[this.userInfo?.role || '',[Validators.required]],
     })
@@ -93,11 +94,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
   submitForm(){
     if(this.formGroup?.valid){
       this.loading = true;
-      if(!this.formGroup?.value?.password?.length){
-        delete this.formGroup?.value?.password
+      const body = this.formGroup?.value;
+      if(!body?.password){
+        delete body?.password
       }
       if(!this.imageSrc && this.userInfo.image?.src){
-        this.formGroup?.controls['image']?.setValue(JSON.stringify(this.userInfo.image));
+        body.image = JSON.stringify(this.userInfo.image)
       }
       this.subscription$.add(
         this._authService?.updateProfile(this._utilityService.prepareFormData(this.formGroup?.value))?.subscribe({

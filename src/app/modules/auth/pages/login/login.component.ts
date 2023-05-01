@@ -7,6 +7,7 @@ import { InputComponent } from 'src/app/shared/components/form-field/input/input
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { passwordValidator } from 'src/app/core/validations/confirm-password.validation';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   initFormGroup(){
     this.formGroup = this._fb.group({
       email: ['',[Validators.required,Validators.email]],
-      password: ['',[Validators.required]],
+      password: ['',[Validators.required, passwordValidator]],
     });
   }
 

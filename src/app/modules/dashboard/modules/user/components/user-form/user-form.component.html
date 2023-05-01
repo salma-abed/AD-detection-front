@@ -8,7 +8,7 @@
             className="w-100">
           </app-input>
         </div>
-        <div class="col-6">
+        <div class="col-6" *ngIf="!this.data?.email">
           <app-input [controller]="getControl('email')" label="Email" [floatLabel]="'auto'" [maxLength]="50"
             className="w-100">
           </app-input>
@@ -23,24 +23,24 @@
             className="w-100">
           </app-input>
         </div>
-        <div class="col-6">
+        <div class="col-6" *ngIf="!this.data?.email">
           <app-input [controller]="getControl('password')" label="Password" [floatLabel]="'auto'" [maxLength]="50"
             className="w-100">
           </app-input>
         </div>
-        <div class="col-6">
+        <div class="col-6" *ngIf="!this.data?.email">
           <app-select [controller]="getControl('role')" optionValue="value" optionLabel="title" label="Roles"
               [placeholder]="'Roles'" [floatLabel]="'auto'" className="w-100"
               [data]="roles"
               className="custom-form-field w-100" appearance="fill"></app-select>
         </div>
-        <div class="col-6" *ngIf="userInfo?.role?.type != 'doctor'">
+        <div class="col-6" *ngIf="formGroup.get('role')?.value == '6102ef52c543fa4f5c1d5aa4'">
           <app-select [controller]="getControl('doctor')" optionValue="_id" optionLabel="name" label="Assign Doctor"
               [placeholder]="'Assign Doctor'" [floatLabel]="'auto'" className="w-100"
               [data]="doctors"
               className="custom-form-field w-100" appearance="fill"></app-select>
         </div>
-        <div class="col-6">
+        <div class="col-6" *ngIf="!this.data?.email">
           <app-select [controller]="getControl('gender')" optionValue="value" optionLabel="title" label="Genders"
               [placeholder]="'Genders'" [floatLabel]="'auto'" className="w-100"
               [data]="genders"

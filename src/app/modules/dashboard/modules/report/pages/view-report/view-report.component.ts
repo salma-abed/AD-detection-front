@@ -43,6 +43,7 @@ export class ViewReportComponent {
         ?.pipe(finalize(() => this.commentLoading = false))
         ?.subscribe({
           next: (res: any) =>{
+            this.commentControl.reset();
             this.reportInfo.comments = res?.comments;
           }
         })
