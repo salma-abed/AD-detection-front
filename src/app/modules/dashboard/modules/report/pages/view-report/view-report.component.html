@@ -16,6 +16,26 @@
           <img [src]="reportInfo?.file?.src" height="100%" width="100%" alt="">
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-12 mb-2">
+          Comments
+        </div>
+        <div class="col-12 rounded shadow mb-2 border p-2 mx-2" *ngFor="let comment of reportInfo?.comments">
+          From: {{comment?.from?.name}} ({{comment?.userType}})
+          <br>
+          Message:
+          <br>
+          {{comment?.comment}}
+        </div>
+
+        <div class="col-12 mb-2">
+          <app-input [controller]="commentControl" label="Comment"
+              [placeholder]="'Comment'" [floatLabel]="'auto'" className="w-100"
+              className="custom-form-field w-100" appearance="fill"></app-input>
+              <button class="btn btn-primary" type="button" (click)="addComment()" [disabled]="commentControl.invalid || commentLoading">Add Comment</button>
+        </div>
+      </div>
     </mat-card-content>
     <!-- <mat-card-actions class="d-flex align-items-center justify-content-between">
       <button class="btn btn-success" mat-button>Approve</button>

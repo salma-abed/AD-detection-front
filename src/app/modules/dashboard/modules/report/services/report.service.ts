@@ -27,6 +27,10 @@ export class ReportService {
     return this._httpClient.put(`${environment.apiUrl}report/${id}`,body);
   }
 
+  addComment(id:number,comment:string){
+    return this._httpClient.put(`${environment.apiUrl}report/${id}/comment`,{comment});
+  }
+
   deleteReport(id:number){
     return this._httpClient.delete(`${environment.apiUrl}report/${id}`);
   }

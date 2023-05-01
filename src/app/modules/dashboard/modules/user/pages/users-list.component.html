@@ -5,7 +5,7 @@
       <span class="search-btn"><span class="stcIcon-search-o"></span></span>
     </div>
 
-    <button class="btn btn-primary d-flex align-items-center" routerLink="../create">
+    <button *ngIf="userInfo?.role?.type != 'doctor'" class="btn btn-primary d-flex align-items-center" routerLink="../create">
       <mat-icon>add</mat-icon>
       Add
     </button>

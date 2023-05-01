@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { passwordValidator } from 'src/app/core/validations/confirm-password.validation';
 
 @Component({
   selector: 'app-patient-form',
@@ -17,7 +18,7 @@ export class PatientFormComponent implements OnInit {
   ];
 
   formGroup!:FormGroup;
-
+  doctors = [];
   constructor(
     private _fb: FormBuilder
   ){}
@@ -35,9 +36,10 @@ export class PatientFormComponent implements OnInit {
       phoneNumber:['',[Validators.required]],
       name:['',[Validators.required]],
       age:['',[Validators.required]],
-      password:['',[Validators.required]],
+      password:['',[Validators.required, passwordValidator]],
       gender:['',[Validators.required]],
       role:['',[Validators.required]],
+      doctor:['',[Validators.required]],
     })
   }
 }

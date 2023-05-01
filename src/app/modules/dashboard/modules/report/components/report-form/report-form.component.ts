@@ -61,6 +61,7 @@ export class ReportFormComponent implements OnInit, OnDestroy, OnChanges {
     this.formGroup = this._fb.group({
       file:[''],
       patient:[this.data?.patient?._id || '',[Validators.required]],
+      notes:[this.data?.notes || ''],
     })
   }
 

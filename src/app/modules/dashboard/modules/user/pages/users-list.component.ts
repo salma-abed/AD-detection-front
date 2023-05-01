@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { debounceTime, distinctUntilChanged, map, Subscription } from 'rxjs';
 import { ConfirmDeleteComponent } from 'src/app/shared/components/confirm-delete/confirm-delete.component';
 import { UserService } from '../services/user.service';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-users-list',
@@ -14,7 +15,7 @@ import { UserService } from '../services/user.service';
 })
 export class UsersListComponent implements OnInit, OnDestroy {
   searchInput: FormControl = new FormControl(null);
-
+  userInfo:any;
   columns = [
     {
       title: 'Name',
@@ -82,6 +83,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
   };
   constructor(
     private _userService:UserService,
+    private _authService:AuthService,
     private _router:Router,
     private _activatedRoute:ActivatedRoute,
     private _dialog:MatDialog,
@@ -91,6 +93,16 @@ export class UsersListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.onSearchChange();
     this.onQueryParamsChange();
+    this.getUserInfo();
+  }
+
+  getUserInfo(){
+    this._authService?.userInfo?.subscribe({
+      next: (userInfo) =>{
+        console.log("userInfo",userInfo)
+        this.userInfo = userInfo;
+      }
+    })
   }
 
   listUsers(){

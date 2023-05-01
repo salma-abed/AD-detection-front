@@ -18,6 +18,11 @@
               [data]="patients?.data"
               className="custom-form-field w-100" appearance="fill"></app-select>
         </div>
+        <div class="col-12">
+          <app-input [controller]="getControl('notes')" optionValue="_id" optionLabel="name" label="notes"
+              [placeholder]="'notes'" [floatLabel]="'auto'" className="w-100"
+              className="custom-form-field w-100" appearance="fill"></app-input>
+        </div>
       </div>
     </mat-card-content>
     <mat-card-actions class="d-flex align-items-center justify-content-between mx-2">

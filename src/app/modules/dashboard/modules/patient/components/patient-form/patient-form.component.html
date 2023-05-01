@@ -32,6 +32,12 @@
           className="custom-form-field w-100" appearance="fill"></app-select>
     </div>
     <div class="col-6">
+      <app-select [controller]="getControl('doctor')" optionValue="value" optionLabel="title" label="Assign Doctor"
+          [placeholder]="'Assign Doctor'" [floatLabel]="'auto'" className="w-100"
+          [data]="doctors"
+          className="custom-form-field w-100" appearance="fill"></app-select>
+    </div>
+    <div class="col-6">
       <app-select [controller]="getControl('gender')" optionValue="value" optionLabel="title" label="Genders"
           [placeholder]="'Genders'" [floatLabel]="'auto'" className="w-100"
           [data]="genders"
