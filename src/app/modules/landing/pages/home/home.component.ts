@@ -17,18 +17,15 @@ export class HomeComponent {
   services = [
     {
       title:"Digital Solutions",
-      content:"Huge collection of elements, rich customization options, flexible layouts, and instant results!",
-      icon:"phone",
+      content:"Our app uses cutting-edge technology to accurately detect early signs of Alzheimer's disease.",
     },
     {
       title:"Digital Solutions",
-      content:"Huge collection of elements, rich customization options, flexible layouts, and instant results!",
-      icon:"phone",
+      content:"Early detection is key to better management and treatment of Alzheimer's, giving patients and families more time to plan and prepare.",
     },
     {
       title:"Digital Solutions",
-      content:"Huge collection of elements, rich customization options, flexible layouts, and instant results!",
-      icon:"phone",
+      content:"With our app, you can take control of your cognitive health and detect Alzheimer's disease before it's too late.",
     },
   ];
 
